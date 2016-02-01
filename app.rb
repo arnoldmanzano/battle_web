@@ -19,7 +19,13 @@ get '/dss' do
   'Z SUCKS'
 end
 
-get '/cat' do
+get '/random-cat' do
   @name = ['amigo', 'oscar', 'viking'].sample
+  erb(:index)
+end
+
+get '/named-cat' do
+  @name = params[:name]
+  p params
   erb(:index)
 end
