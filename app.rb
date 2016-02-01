@@ -20,5 +20,6 @@ get '/dss' do
 end
 
 get '/cat' do
+  @name = ['amigo', 'oscar', 'viking'].sample
   erb(:index)
 end
