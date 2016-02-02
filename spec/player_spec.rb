@@ -13,15 +13,6 @@ describe Player do
 
   end
 
-  describe '#attack' do
-
-    it 'damages the other player' do
-      expect(bill).to receive :receive_damage
-      bob.attack(bill)
-    end
-
-  end
-
   describe '#receive_damage' do
 
     it 'reduces the hp' do
