@@ -1,15 +1,15 @@
-<h1 id="player_names"><%= @player_one.name %> attacked <%= @player_two.name %></h1>
+<h1 id="player_names"><%= @game.player_one.name %> attacked <%= @game.player_two.name %></h1>
 
 
 <div id="player_one">
   <div class="hit_points">
-    <%= @player_one.hp %>
+    <%= @game.player_one.hp %>
   </div>
 </div>
 
 
 <div id="player_two">
   <div class="hit_points">
-    <%= @player_two.hp %>
+    <%= @game.player_two.hp %>
   </div>
 </div>
