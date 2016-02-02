@@ -10,7 +10,7 @@ feature 'Viewing hit points' do
     end
 
     within(:css, "#player_two .hit_points") do
-      expect(page).to have_content "60"
+      expect(page).to have_content "100"
     end
 
   end

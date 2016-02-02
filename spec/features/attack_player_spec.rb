@@ -8,4 +8,9 @@ feature 'Attacking player' do
 
   end
 
+  scenario 'Reducing hitpoints' do
+    sign_in_and_play
+    click_button('Attack!')
+    expect(page).to have_content(98)
+  end
 end
