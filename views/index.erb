@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <% if params[:player_1_name].nil? || params[:player_2_name].nil? %>
+  <form>
+      <input type="text" name="player_1_name">
+      <input type="text" name ="player_2_name">
+      <input type="submit" value="Submit">
+  </form>
+<%end%>
+
+  <% unless params[:player_1_name].nil? || params[:player_2_name].nil? %>
+    <p> <%= @player_1_name %> vs <%=@player_2_name%> </p>
+  <%end%>
+</body>
+</html>
