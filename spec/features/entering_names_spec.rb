@@ -10,12 +10,8 @@ feature 'entering names' do
 
 #Test is written so that they can be run by Capybara.
   scenario 'submitting names' do
-    visit('/')
-    fill_in :player_1_name, with: 'Rufus'
-    fill_in :player_2_name, with: 'Mittens'
-    click_button 'Submit'
+    sign_in_and_play
     expect(page).to have_content 'Rufus vs Mittens'
-
   end
 
 end

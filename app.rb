@@ -20,8 +20,14 @@ class Battle < Sinatra::Base
     @player_1_name = session['player_1_name']
     @player_2_name = session['player_2_name']
 
-  erb:play
-end
+    erb:play
+  end
+
+  get '/confirmation' do
+    @player_1_name = session['player_1_name']
+    @player_2_name = session['player_2_name']
+    erb:confirmation
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0

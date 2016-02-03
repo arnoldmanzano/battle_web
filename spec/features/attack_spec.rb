@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'rack/test'
 
-feature 'view hit points' do
+feature 'attack other player' do
   include Rack::Test::Methods
 
   def app
@@ -9,9 +9,10 @@ feature 'view hit points' do
   end
 
 #Test is written so that they can be run by Capybara.
-  scenario 'player 1 viewing player 2 hit points' do
+  scenario 'Player 1 attacks Player 2' do
     sign_in_and_play
-    expect(page).to have_content 'Mittens hit points = 60'
+    click_button('Attack Mittens')
+    expect(page).to have_content('Rufus has attacked Mittens')
   end
 
 end

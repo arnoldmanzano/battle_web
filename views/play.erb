@@ -8,6 +8,9 @@
 <% unless @player_1_name.nil? || @player_2_name.nil? %>
   <p> <%= @player_1_name %> vs <%=@player_2_name%> </p>
   <p> <%=@player_2_name%> hit points = 60 </p>
+  <form action="/confirmation" method ="get">
+    <input type="submit" value="Attack Mittens">
+  </form>
 <%end%>
 
 </body>
