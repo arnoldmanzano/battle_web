@@ -8,7 +8,7 @@ describe 'entering names' do
   Battle.new
   end
 
-#Test is written so that they can be run by Capybara. 
+#Test is written so that they can be run by Capybara.
   scenario 'submitting names' do
     visit('/')
     fill_in :player_1_name, with: 'Rufus'
@@ -17,4 +17,5 @@ describe 'entering names' do
     expect(page).to have_content 'Rufus vs Mittens'
 
   end
+
 end
