@@ -5,9 +5,9 @@
 </head>
 <body>
 
-<% unless @player_1_name.nil? || @player_2_name.nil? %>
-  <p> <%= @player_1_name %> vs <%=@player_2_name%> </p>
-  <p> <%=@player_2_name%> hit points = <%=@player_2_hit_points%> </p>
+<% unless @game.player_1.name.nil? || @game.player_2.name.nil? %>
+  <p> <%= @game.player_1.name %> vs <%=@game.player_2.name%> </p>
+  <p> <%=@game.player_2.name%> hit points = <%=@game.player_2.points%> </p>
   <form action="/attack" method ="get">
     <input type="submit" value="Attack Mittens">
   </form>
