@@ -16,6 +16,14 @@ describe Player do
     end
   end
 
+  describe '#attack' do
+    it 'causes attacked player to reduce points' do
+      player2 = described_class.new('mittens')
+      expect(player2).to receive(:reduce_points)
+      player.attack(player2)
+    end
+end
+
   describe '#reduce_points' do
     it 'reduces the points by 10' do
       player.reduce_points

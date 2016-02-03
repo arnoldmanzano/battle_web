@@ -18,7 +18,7 @@ feature 'attack other player' do
   scenario 'Player 1 reduces Player 2 hit points by 10' do
     sign_in_and_play
     click_button('Attack Mittens')
-    visit '/play'
+    click_link('PLAY')
     expect(page).to have_content 'Mittens hit points = 50'
   end
 end
