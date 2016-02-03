@@ -15,7 +15,6 @@ class Battle < Sinatra::Base
     player_1 = Player.new(params[:player_1_name])
     player_2 = Player.new(params[:player_2_name])
     $game = Game.new(player_1, player_2)
-
     redirect '/play'
   end
 
@@ -28,6 +27,12 @@ class Battle < Sinatra::Base
     @game = $game
     @game.attack(@game.player_2)
     erb:attack
+  end
+
+  get '/attack2' do
+    @game = $game
+    @game.attack(@game.player_1)
+    erb:attack2
   end
 
   # start the server if ruby file executed directly
