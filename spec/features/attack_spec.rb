@@ -15,4 +15,10 @@ feature 'attack other player' do
     expect(page).to have_content('Rufus has attacked Mittens')
   end
 
+  scenario 'Player 1 reduces Player 2 hit points by 10' do
+    sign_in_and_play
+    click_button('Attack Mittens')
+    visit '/play'
+    expect(page).to have_content 'Mittens hit points = 50'
+  end
 end
