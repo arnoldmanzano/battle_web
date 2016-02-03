@@ -1,6 +1,6 @@
 
 require 'sinatra/base'
-require 'player'
+require './lib/player'
 
 class Battle < Sinatra::Base
   get '/' do
@@ -19,14 +19,15 @@ class Battle < Sinatra::Base
   get '/play' do
     @player_1_name = $player_1.name
     @player_2_name = $player_2.name
-
+    @player_2_hit_points = $player_2.points
     erb:play
   end
 
-  get '/confirmation' do
+  get '/attack' do
     @player_1_name = $player_1.name
     @player_2_name = $player_2.name
-    erb:confirmation
+    $player_1.attack($player_2)
+    erb:attack
   end
 
   # start the server if ruby file executed directly
