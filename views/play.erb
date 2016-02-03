@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<% unless params[:player_1_name].nil? || params[:player_2_name].nil? %>
+<% unless @player_1_name.nil? || @player_2_name.nil? %>
   <p> <%= @player_1_name %> vs <%=@player_2_name%> </p>
 <%end%>
 
