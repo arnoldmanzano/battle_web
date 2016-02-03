@@ -18,4 +18,16 @@ describe Game do
       expect(game.player_1).to eq(:player_1)
     end
   end
+
+  describe '#player_1_turn?' do
+    it 'starts as true' do
+      expect(game.player_1_turn?).to eq true
+    end
+
+    it 'switches to false, after player 1 attacks' do
+      game.attack(player_2)
+      expect(game.player_1_turn?).to eq false
+    end
+  end
+
 end

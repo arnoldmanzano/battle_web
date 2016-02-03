@@ -9,10 +9,10 @@
   <p> <%= @game.player_1.name %> vs <%=@game.player_2.name%> </p>
   <p> <%=@game.player_2.name%> hit points = <%=@game.player_2.points%> </p>
   <form action="/attack" method ="get">
-    <input type="submit" value="Attack Mittens">
+    <input type="submit" value="Attack <%=@game.player_2.name%>">
   </form>
   <form action="/attack2" method ="get">
-    <input type="submit" value="Attack Rufus">
+    <input type="submit" value="Attack <%=@game.player_1.name%>">
   </form>
 <%end%>
 
