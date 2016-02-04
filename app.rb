@@ -9,21 +9,16 @@ class Battle < Sinatra::Base
     erb(:index)
   end
 
-  post '/names' do
-    @name_one = session[:name_one].inspect
-    @name_two = session[:name_two].inspect
-    # @name_one = params[:name_one]
-  	# @name_two = params[:name_two]
-    # erb(:play)
-    redirect to('/play')
+  get '/play' do
+    @player_1_name = session[:player_1_name]
+    @player_2_name = session[:player_2_name]
+    erb(:play)
   end
 
-  get '/play' do
-    p params
-    #erb(:play)
-    session['name_one'] = params[:name_one]
-    session['name_two'] = params[:name_two]
-    erb(:play)
+  post '/names' do
+    session[:player_1_name] = params[:player_1_name]
+    session[:player_2_name] = params[:player_2_name]
+    redirect '/play'
   end
 
   # start the server if ruby file executed directly
