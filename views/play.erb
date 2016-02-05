@@ -10,19 +10,24 @@
   <p> <%=@game.player_1.name%> hit points = <%=@game.player_1.points%> </p>
   <p> <%=@game.player_2.name%> hit points = <%=@game.player_2.points%> </p>
 
-  <% if @game.player_1_turn? %>
-  <form action="/attack" method ="get">
-    <input type="submit" value="Attack <%=@game.player_2.name%>">
-  </form>
-  <% end %>
+  <% if @game.losing_player.nil? %>
+    <% if @game.player_1_turn? %>
+    <form action="/attack" method ="get">
+      <input type="submit" value="Attack <%=@game.player_2.name%>">
+    </form>
+    <% end %>
 
-  <% unless @game.player_1_turn? %>
-  <form action="/attack2" method ="get">
-    <input type="submit" value="Attack <%=@game.player_1.name%>">
-  </form>
+    <% unless @game.player_1_turn? %>
+    <form action="/attack2" method ="get">
+      <input type="submit" value="Attack <%=@game.player_1.name%>">
+    </form>
+    <% end %>
   <% end %>
-
 <%end%>
 
+  <% unless @game.losing_player.nil? %>
+    <h1> <%=@game.losing_player.name%> loses! </h1>
+    <h3>Game over! </h3>
+  <% end %>
 </body>
 </html>

@@ -11,3 +11,14 @@ def first_turn
   click_button('Attack Mittens')
   click_link('PLAY')
 end
+
+def attack_until_0hp
+  5.times do
+    click_button('Attack Mittens')
+    click_link('PLAY')
+    click_button('Attack Rufus')
+    click_link('PLAY')
+  end
+  click_button('Attack Mittens')
+  click_link('PLAY')
+end

@@ -12,12 +12,13 @@ describe Player do
 
   describe '#points' do
     it 'returns the hit points of the player' do
-      expect(player.points).to eq 60
+      expect(player.points).to eq Player::DEFAULT_HP
     end
   end
 
   describe '#reduce_points' do
     it 'reduces the points by 10' do
+      allow(Kernel).to receive(:rand).and_return(10)
       player.reduce_points
       expect{ player.reduce_points }.to change{player.points}.by(-10)
     end
