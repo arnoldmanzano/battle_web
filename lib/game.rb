@@ -1,16 +1,19 @@
-
 class Game
 
-  attr_reader :player_one, :player_two
+  attr_reader :player_1, :player_2
 
-  def initialize(player_one, player_two)
-    @player_one = player_one
-    @player_two = player_two
+  def initialize (player_1, player_2)
+    @player_1 = player_1
+    @player_2 = player_2
+    @turn_counter =0
   end
 
-
-  def attack(player_one, player_two)
-    player_two.receive_damage
+  def attack(player)
+    player.reduce_points
+     @turn_counter +=1
   end
 
+   def player_1_turn?
+     @turn_counter.even?
+   end
 end
