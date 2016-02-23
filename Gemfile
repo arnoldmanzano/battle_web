@@ -1,7 +1,5 @@
-# A sample Gemfile
-source "https://rubygems.org"
-gem 'sinatra'
-gem 'shotgun'
+source 'https://rubygems.org'
+
 gem 'capybara'
-gem 'selenium-webdriver'
+gem 'sinatra'
 gem 'rspec-sinatra'

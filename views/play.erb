@@ -1,0 +1,20 @@
+
+<h1 id="player_names"><%= @game.player_one.name %> vs. <%= @game.player_two.name %></h1>
+
+
+<div id="player_one">
+  <div class="hit_points">
+    <%= @game.player_one.hp %>
+  </div>
+
+  <form action="/attack" method="get">
+    <input type="submit" value="Attack!">
+  </form>
+
+</div>
+
+<div id="player_two">
+  <div class="hit_points">
+    <%= @game.player_two.hp %>
+  </div>
+</div>
